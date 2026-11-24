@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 using System.Text.Unicode;
 using System.Windows;
 
-namespace JSON_Circular
+namespace WPF_JSON_Circular
 {
 	public partial class MainWindow : Window
 	{

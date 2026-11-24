@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace JSON_circular
+namespace WPF_JSON_Circular
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

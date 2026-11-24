@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JSON_Circular
+namespace WPF_JSON_Circular
 { 
 	public class Article
 	{
