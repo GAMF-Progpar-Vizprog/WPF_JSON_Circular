@@ -20,7 +20,10 @@ namespace JSON_Circular
 			ShowList();
 			var options = new System.Text.Json.JsonSerializerOptions
 			{
-				Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.LatinExtendedA, UnicodeRanges.Latin1Supplement),
+				Encoder = JavaScriptEncoder.Create(
+					UnicodeRanges.BasicLatin, 
+					UnicodeRanges.LatinExtendedA, 
+					UnicodeRanges.Latin1Supplement),
 				WriteIndented = true,
 				ReferenceHandler = ReferenceHandler.Preserve
 			};
@@ -34,7 +37,8 @@ namespace JSON_Circular
 			ArticleData DeserializedAD;
 			string jsonr = File.ReadAllText("Articles.json");
 			tbJSON.Text += "\n-------------------------------------------------------\n\n" + "JSON:\n"+jsonr+"\n\n";
-			DeserializedAD = JsonSerializer.Deserialize<ArticleData>(jsonr,options);
+			DeserializedAD = JsonSerializer.Deserialize<ArticleData>(
+				jsonr,options);
 			ShowList();
 		}
 
@@ -56,7 +60,7 @@ namespace JSON_Circular
 								select x.Authors.Aggregate("", 
 								(a, c) => a + (a.Length > 0 ? ", " : "") + c.FirstName + " " + c.LastName) +
 								": " + x.Title + ", " + x.DateofPublication.Year;
-			tbJSON.Text += res.Aggregate("", (a, c) => a + c + "\n")+"\n";
+			tbJSON.Text += res.Aggregate("", (a, c) => a + c + "\n") +"\n";
 
 		}
 
